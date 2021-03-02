@@ -10,15 +10,12 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
+  test:
     runs-on: ubuntu-latest # gets the data from strategy.matrix.o
-
     strategy:
       matrix:
         node-version: [ 10.x ]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     # Checkout actions
     - uses: actions/checkout@v2
