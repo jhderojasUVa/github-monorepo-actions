@@ -1,0 +1,8 @@
+{
+  "name": "@jhderojas/github-packages",
+  "private": false,
+  "main": "lib/package1.js",
+  "scripts": {
+    "test": "jest"
+  }
+}
