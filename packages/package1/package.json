@@ -1,8 +1,26 @@
 {
   "name": "@jhderojas/github-packages",
   "private": false,
+  "homepage": "https://github.com/jhderojasUVa/github-monorepo-actions#readme",
   "main": "lib/package1.js",
   "scripts": {
     "test": "jest"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhderojasUVa/github-monorepo-actions.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/jhderojasUVa/github-monorepo-actions/issues"
   }
 }
