@@ -30,6 +30,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       #- run: yarn global add lerna
+      - run: yarn install
       - run: sh node_modules/.bin/lerna publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
