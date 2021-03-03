@@ -1,6 +1,6 @@
 {
-  "name": "@jhderojas/github-packages",
-  "private": false,
+  "name": "@jhderojas/package1",
+  "version": "0.0.0",
   "homepage": "https://github.com/jhderojasUVa/github-monorepo-actions#readme",
   "main": "lib/package1.js",
   "scripts": {

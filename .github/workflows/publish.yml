@@ -37,7 +37,6 @@ jobs:
           git remote set-url origin https://x-access-token:${GIT_TOKEN}@github.com/jhderojasUVa/github-monorepo-actions
       #- run: yarn global add lerna
       - run: yarn install
-      - run: npm i g lerna
       # pulls all tags (needed for lerna / semantic release to correctly version)
       #- run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - run: npx lerna publish
