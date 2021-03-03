@@ -25,12 +25,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        # pulls all commits (needed for lerna / semantic release to correctly version)
+        fetch-depth: "0"
       - uses: actions/setup-node@v1
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
+      - name: Git Identity
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${GIT_TOKEN}@github.com/jhderojasUVa/github-monorepo-actions
       #- run: yarn global add lerna
       - run: yarn install
-      - run: sh node_modules/.bin/lerna publish
+      - run: npm i g lerna
+      # pulls all tags (needed for lerna / semantic release to correctly version)
+      #- run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+      - run: lerna publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
