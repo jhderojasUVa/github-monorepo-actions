@@ -35,8 +35,8 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${GIT_TOKEN}@github.com/jhderojasUVa/github-monorepo-actions
-      #- run: yarn global add lerna
-      - run: yarn install
+      #- run: yarn global add lerna # No need for this
+      #- run: yarn install # No need for this
       # pulls all tags (needed for lerna / semantic release to correctly version)
       #- run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - run: npx lerna publish
