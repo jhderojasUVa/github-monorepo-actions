@@ -26,7 +26,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         # pulls all commits (needed for lerna / semantic release to correctly version)
-        #fetch-depth: "0"
       - uses: actions/setup-node@v1
         with:
           node-version: 12
