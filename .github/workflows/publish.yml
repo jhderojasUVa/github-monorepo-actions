@@ -20,8 +20,25 @@ jobs:
       - run: yarn install
       - run: yarn test
   
-  publish-at-npm:
+  version:
     needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+       - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - name: Git Identity
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${GIT_TOKEN}@github.com/jhderojasUVa/github-monorepo-actions
+      - name: Versioning
+        run: npmx lerna version --yes
+
+  publish-at-npm:
+    needs: version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
