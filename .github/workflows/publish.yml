@@ -39,6 +39,6 @@ jobs:
       #- run: yarn install # No need for this
       # pulls all tags (needed for lerna / semantic release to correctly version)
       #- run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
-      - run: npx lerna publish --yes
+      - run: npx lerna publish from-git --yes
         env:
           NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}

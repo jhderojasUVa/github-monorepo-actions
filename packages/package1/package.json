@@ -19,5 +19,8 @@
   },
   "bugs": {
     "url": "https://github.com/jhderojasUVa/github-monorepo-actions/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
